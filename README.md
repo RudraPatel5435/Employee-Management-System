@@ -9,7 +9,7 @@ For using the software:
 ```
 npm i
 npm install -D tailwindcss postcss autoprefixer
-npx tailwindcss init -
+npx tailwindcss init -p
 ```
 Run these lines of code so that all the required packages are installed on your machine.
 - Now just write `npm run dev` to start the server.
