@@ -3,11 +3,13 @@ import Login from './components/Auth/Login'
 import EmployeeDashboard from './components/Dashboard/EmployeeDashboard'
 import AdminDashboard from './components/Dashboard/AdminDashboard'
 import { AuthContext } from './context/AuthProvider'
+import { getLocalStorage } from './utils/localStorage'
 
 const App = () => {
   const [user , setUser] = useState(null)
   const [loggedInUserData, setLoggedInUserData] = useState(null)
   const [userData, setUserData] = useContext(AuthContext)
+  const userNameAdmin = getLocalStorage().admin[0].name
 
   useEffect(() => {
     const loggedInUser = localStorage.getItem('loggedInUser')
@@ -20,7 +22,6 @@ const App = () => {
   }, []);
 
   const handleLogin = (email,password)=>{
-    // const admin =  authData.admin.find((e)=>email == e.email && e.password == password)
       if(email == 'a@a.com' && password=="123"){
         setUser('admin')
       localStorage.setItem("loggedInUser", JSON.stringify({role:'admin'}))
@@ -43,7 +44,7 @@ const App = () => {
   return (
     <>
       {!user ? <Login handleLogin={handleLogin} />: ''}
-      {user == 'admin' ? <AdminDashboard changeUser={setUser} /> : (user=='employee'?<EmployeeDashboard changeUser={setUser} data={loggedInUserData} /> : null)}
+      {user == 'admin' ? <AdminDashboard changeUser={setUser} username={userNameAdmin} /> : (user=='employee'?<EmployeeDashboard changeUser={setUser} data={loggedInUserData} /> : null)}
     </>
   )
 }
