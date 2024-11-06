@@ -1,6 +1,5 @@
 import React, { useContext, useState } from 'react'
 import { AuthContext } from '../../context/AuthProvider'
-import { setLocalStorage } from '../../utils/localStorage'
 
 const CreateTask = () => {
 

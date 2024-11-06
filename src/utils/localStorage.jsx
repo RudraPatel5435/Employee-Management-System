@@ -5,7 +5,7 @@ const employees = [
     "password": "123",
     "name": "Arjun",
     "taskCounts": {
-      "active": 1,
+      "active": 0,
       "completed": 1,
       "failed": 1,
       "newTask": 1
@@ -16,7 +16,7 @@ const employees = [
         "taskDescription": "Create slides for the upcoming client meeting.",
         "taskDate": "2024-11-05",
         "category": "Work",
-        "active": true,
+        "active": false,
         "completed": false,
         "failed": false,
         "newTask": true
@@ -86,7 +86,7 @@ const employees = [
       "active": 1,
       "completed": 1,
       "failed": 1,
-      "newTask": 1
+      "newTask": 0
     },
     "tasks": [
       {
@@ -97,7 +97,7 @@ const employees = [
         "active": true,
         "completed": false,
         "failed": false,
-        "newTask": true
+        "newTask": false
       },
       {
         "taskTitle": "Write Blog Post",
@@ -161,7 +161,7 @@ const employees = [
     "password": "123",
     "name": "Ananya",
     "taskCounts": {
-      "active": 1,
+      "active": 0,
       "completed": 1,
       "failed": 1,
       "newTask": 1
@@ -172,7 +172,7 @@ const employees = [
         "taskDescription": "Plan and schedule posts for the week.",
         "taskDate": "2024-11-04",
         "category": "Marketing",
-        "active": true,
+        "active": false,
         "completed": false,
         "failed": false,
         "newTask": true
@@ -239,7 +239,7 @@ const employees = [
     "password": "123",
     "name": "Maya",
     "taskCounts": {
-      "active": 2,
+      "active": 1,
       "completed": 0,
       "failed": 1,
       "newTask": 1
@@ -250,7 +250,7 @@ const employees = [
         "taskDescription": "Review new design prototypes with the team.",
         "taskDate": "2024-11-08",
         "category": "Design",
-        "active": true,
+        "active": false,
         "completed": false,
         "failed": false,
         "newTask": true
@@ -374,7 +374,7 @@ const employees = [
       "active": 1,
       "completed": 2,
       "failed": 0,
-      "newTask": 1
+      "newTask": 0
     },
     "tasks": [
       {
@@ -385,7 +385,7 @@ const employees = [
         "active": true,
         "completed": false,
         "failed": false,
-        "newTask": true
+        "newTask": false
       },
       {
         "taskTitle": "Project Proposal",
@@ -410,7 +410,7 @@ const employees = [
     ]
   }
 ]
-  
+
   const admin = [
     {
       "id": 1,
