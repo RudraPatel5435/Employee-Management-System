@@ -1,7 +1,7 @@
 const employees = [
   {
     "id": 1,
-    "email": "e@e.com",
+    "email": "1@1.com",
     "password": "123",
     "name": "Arjun",
     "taskCounts": {
@@ -45,7 +45,7 @@ const employees = [
   },
   {
     "id": 2,
-    "email": "employee2@example.com",
+    "email": "2@2.com",
     "password": "123",
     "name": "Priya",
     "taskCounts": {
@@ -79,7 +79,7 @@ const employees = [
   },
   {
     "id": 3,
-    "email": "employee3@example.com",
+    "email": "3@3.com",
     "password": "123",
     "name": "Rahul",
     "taskCounts": {
@@ -123,7 +123,7 @@ const employees = [
   },
   {
     "id": 4,
-    "email": "employee4@example.com",
+    "email": "4@4.com",
     "password": "123",
     "name": "Sneha",
     "taskCounts": {
@@ -157,7 +157,7 @@ const employees = [
   },
   {
     "id": 5,
-    "email": "employee5@example.com",
+    "email": "5@5.com",
     "password": "123",
     "name": "Ananya",
     "taskCounts": {
@@ -201,7 +201,7 @@ const employees = [
   },
   {
     "id": 6,
-    "email": "employee6@example.com",
+    "email": "6@6.com",
     "password": "123",
     "name": "Vikram",
     "taskCounts": {
@@ -235,7 +235,7 @@ const employees = [
   },
   {
     "id": 7,
-    "email": "employee7@example.com",
+    "email": "7@7.com",
     "password": "123",
     "name": "Maya",
     "taskCounts": {
@@ -279,7 +279,7 @@ const employees = [
   },
   {
     "id": 8,
-    "email": "employee8@example.com",
+    "email": "8@8.com",
     "password": "123",
     "name": "Nikhil",
     "taskCounts": {
@@ -323,7 +323,7 @@ const employees = [
   },
   {
     "id": 9,
-    "email": "employee9@example.com",
+    "email": "9@9.com",
     "password": "123",
     "name": "Kavya",
     "taskCounts": {
@@ -367,7 +367,7 @@ const employees = [
   },
   {
     "id": 10,
-    "email": "employee10@example.com",
+    "email": "10@10.com",
     "password": "123",
     "name": "Rishi",
     "taskCounts": {
