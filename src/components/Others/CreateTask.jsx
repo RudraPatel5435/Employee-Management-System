@@ -3,38 +3,40 @@ import { AuthContext } from '../../context/AuthProvider'
 
 const CreateTask = () => {
 
+    
     const [userData, setUserData] = useContext(AuthContext)
-
+    
     const [taskTitle, setTaskTitle] = useState('')
     const [taskDes, setTaskDes] = useState('')
     const [taskDate, setTaskDate] = useState('')
     const [assignTo, setAssignTo] = useState('')
     const [category, setCategory] = useState('')
-
+    
     const [newTask, setnewTask] = useState({})
-
+    
     const submitHandler = (e)=>{
         e.preventDefault()
         setnewTask({taskTitle, taskDes, taskDate, category, active:false, newTask:true, failed:false, complete:false})
-
-        const data = userData
-
-        data.forEach(elem => {
+        
+        const updatedData = [...userData]
+        
+        updatedData.forEach(elem => {
             if (assignTo == elem.name){
-                elem.tasks.push(newTask)
-                elem.taskCounts.newTask = elem.taskCounts.newTask + 1
+                const updatedTasks = [...elem.tasks, { taskTitle, taskDes, taskDate, category, active: false, newTask: true, failed: false, complete: false }]
+                elem.tasks = updatedTasks
+                elem.taskCounts.newTask += 1
             }
         })
-        setUserData(data)
-        localStorage.setItem('employees', JSON.stringify(data))
-
+        setUserData(updatedData)
+        localStorage.setItem('employees', JSON.stringify(updatedData))
+        
         setTaskTitle('')
         setTaskDes('')
         setAssignTo('')
         setCategory('')
         setTaskDate('')
     }
-
+    
   return (
     <div>
             <form onSubmit={(e)=>{
