@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { AuthContext } from '../../context/AuthProvider'
 
 const NewTask = (props) => {
@@ -8,22 +8,25 @@ const NewTask = (props) => {
   const taskAccepted = () =>{
     props.task.newTask=false
     props.task.active=true
-
+  
     employeeData.tasks.forEach((e, index) => {
       if (e.taskTitle == props.task.taskTitle) {
         employeeData.tasks[index] = props.task
       }
     })
-
-    employeeData.taskCounts.active = employeeData.taskCounts.active + 1
-    employeeData.taskCounts.newTask = employeeData.taskCounts.newTask - 1
-    userData.forEach((e,index)=>{
-      if (e.name == employeeData.name){
-        userData[index] = employeeData
+  
+    employeeData.taskCounts.active += 1
+    employeeData.taskCounts.newTask -= 1
+  
+    const updatedUserData = userData.map((user) => {
+      if (user.name == employeeData.name){
+        return {...employeeData}
       }
+      return user
     })
-    console.log(userData[0])
-    localStorage.setItem('employees', JSON.stringify(userData))
+  
+    setUserData(updatedUserData)
+    localStorage.setItem('employees', JSON.stringify(updatedUserData))
   }
 
   return (

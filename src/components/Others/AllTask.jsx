@@ -16,7 +16,7 @@ const AllTask = () => {
       </div>
       <div className="">
         {userData.map((elem, idx)=>{
-        return <div key={idx} className="bg-black border-2 border-neutral-400 mb-2 py-2 px-4 font-bold text-base flex justify-between rounded ">
+        return <div key={idx} className="bg-black border-2 border-emerald-500 mb-2 py-2 px-4 font-bold text-base flex justify-between rounded ">
           <h2 className='w-1/5 text-white text-lg'>{elem.name}</h2>
           <h3 className='w-1/5 text-blue-600'>{elem.taskCounts.newTask}</h3>
           <h5 className='w-1/5 text-yellow-400'>{elem.taskCounts.active}</h5>

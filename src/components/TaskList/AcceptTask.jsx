@@ -9,41 +9,49 @@ const AcceptTask = (props) => {
   const taskCompleted = () =>{
     props.task.active=false
     props.task.completed=true
-
+  
     employeeData.tasks.forEach((e, index) => {
       if (e.taskTitle == props.task.taskTitle) {
         employeeData.tasks[index] = props.task
       }
     })
-
-    employeeData.taskCounts.completed = employeeData.taskCounts.completed + 1
-    employeeData.taskCounts.active = employeeData.taskCounts.active - 1
-    userData.forEach((e,index)=>{
-      if (e.name == employeeData.name){
-        userData[index] = employeeData
+  
+    employeeData.taskCounts.completed += 1
+    employeeData.taskCounts.active -= 1
+  
+    const updatedUserData = userData.map((user) => {
+      if (user.name == employeeData.name){
+        return {...employeeData}
       }
+      return user
     })
-    localStorage.setItem('employees', JSON.stringify(userData))
+  
+    setUserData(updatedUserData)
+    localStorage.setItem('employees', JSON.stringify(updatedUserData))
   }
 
   const taskFailed = () =>{
     props.task.active=false
     props.task.failed=true
-
+  
     employeeData.tasks.forEach((e, index) => {
       if (e.taskTitle == props.task.taskTitle) {
         employeeData.tasks[index] = props.task
       }
     })
-
-    employeeData.taskCounts.failed = employeeData.taskCounts.failed + 1
-    employeeData.taskCounts.active = employeeData.taskCounts.active - 1
-    userData.forEach((e,index)=>{
-      if (e.name == employeeData.name){
-        userData[index] = employeeData
+  
+    employeeData.taskCounts.failed += 1
+    employeeData.taskCounts.active -= 1
+  
+    const updatedUserData = userData.map((user) => {
+      if (user.name == employeeData.name){
+        return {...employeeData}
       }
+      return user
     })
-    localStorage.setItem('employees', JSON.stringify(userData))
+  
+    setUserData(updatedUserData)
+    localStorage.setItem('employees', JSON.stringify(updatedUserData))
   }
 
   return (
