@@ -35,6 +35,7 @@ const CreateTask = () => {
         setAssignTo('')
         setCategory('')
         setTaskDate('')
+        alert("Task Successfully Created")
     }
     
   return (
